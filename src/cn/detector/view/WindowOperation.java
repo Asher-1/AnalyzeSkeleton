@@ -83,7 +83,7 @@ public class WindowOperation extends JFrame implements TreeSelectionListener{
 	//图片文件的绝对路径
 	private String picAbsPath;
 	//图片文件所在目录的绝对路径
-	private String path_contains_pic;
+	public String path_contains_pic; //提供给start类用于打开所选图片所在文件夹
 	//图片文件的名称
 	private String picName = null;
 	//保存坐标值的文本文件的绝对路径
@@ -403,7 +403,7 @@ public class WindowOperation extends JFrame implements TreeSelectionListener{
 				chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 				// 设置默认打开路径
 //				chooser.setCurrentDirectory(new File("G:\\develop\\cocosPNG"));
-				chooser.setCurrentDirectory(new File("C:\\Users\\A\\Desktop\\人体姿态自动标注系统-软件外包类（人机交互应用小类）-陆大海-张宏博-国赛组\\软件及测试文件\\测试文件"));
+				chooser.setCurrentDirectory(new File("测试文件"));
 				chooser.setMultiSelectionEnabled(true);
 				// 显示文件选择对话框
 				int result = chooser.showOpenDialog(null);
@@ -788,29 +788,6 @@ public class WindowOperation extends JFrame implements TreeSelectionListener{
 		color_Button.setPreferredSize(size);
 		color_Button.setFont(font);
 		color_Button.addActionListener(myLabel);
-		
-	
-
-//		Box box1 = Box.createHorizontalBox(); //创建Box 类对象
-//		Toolkit t1 = Toolkit.getDefaultToolkit(); // 获取工具箱
-//        // 定义box控件大小
-//        Dimension screenSize1 = new Dimension((int)t1.getScreenSize().getWidth(), (int)t1.getScreenSize().getHeight()/8);
-//        box1.setPreferredSize(screenSize1); // 设置box控件大小
-//		//box1.setLayout(new FlowLayout());
-//		box1.add(inPutFileButton);
-//		box1.add(inPutCoordinateButton);
-//		box1.add(saveButton);
-//		box1.add(printScreenButton);
-//		box1.add(resetButton);
-//		box1.add(resetAllButton);
-//		box1.add(changeToDrawLines);
-//		box1.add(changeToDrawAnchor);
-//		box1.add(changeToDrawPoints);
-//		box1.add(linkButton);
-//		box1.add(paintNextButton);
-//		box1.add(color_Button);
-//		box1.add(font_Button);
-//		add(box1,BorderLayout.NORTH);
 		
 		
 		panel = new JPanel(); // 创建panel面板，放置按钮

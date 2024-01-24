@@ -11,6 +11,7 @@ CMakeLists.txt.user
 tmp/
 *.tmp
 dl/*
+bin/*
 *.swp
 *.run
 *.zip

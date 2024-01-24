@@ -13,9 +13,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+//import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -37,16 +39,7 @@ public class Start {
 	 * @throws MalformedURLException 
 	 */
 	public static void main(String[] args) throws MalformedURLException {
-		
-//		try {// 设置默认皮肤
-//			//UIManager.setLookAndFeel(MyLookAndFeel.SYS_NIMBUS );
-//			//UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-//		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
-//				| UnsupportedLookAndFeelException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
+				
 		win = new WindowOperation("人体姿态自动标注系统"); //创建人体注解系统窗体
 		MyLabel.setWin(win); //将窗体对像的引用传入MyLabel中
 		Mydraw.setWin(win);
@@ -157,6 +150,17 @@ public class Start {
 					background_sound.stop();
 				}
 				
+				else if(e.isControlDown() && e.getKeyCode() == KeyEvent.VK_O){//打开标注图片所在文件夹
+
+					try {
+						Runtime.getRuntime().exec("explorer.exe "+win.path_contains_pic);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					
+				}
 				else if(e.isControlDown() && e.getKeyCode() == KeyEvent.VK_F1){
 					win.dispose();
 					try {
